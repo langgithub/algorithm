@@ -41,16 +41,14 @@ add_executable(aes_xhs_6611
         magic/aes/aes_xhs_6611/aes_core.cpp
         magic/aes/aes_xhs_6611/cbc128.cpp
         magic/aes/aes_xhs_6611/test.cpp
-        magic/aes/aes_xhs_6611/xhs.cpp
-        magic/aes/aes_xhs_6611/xhs.h)
+        magic/aes/aes_xhs_6611/xhs.cpp)
 
-add_library(foo SHARED magic/aes/aes_xhs_6611/aes.h
-        magic/aes/aes_xhs_6611/aes_cbc.cpp
-        magic/aes/aes_xhs_6611/aes_core.cpp
-        magic/aes/aes_xhs_6611/cbc128.cpp
-        magic/aes/aes_xhs_6611/test.cpp
-        magic/aes/aes_xhs_6611/xhs.cpp
-        magic/aes/aes_xhs_6611/xhs.h)
+#add_library(foo SHARED magic/aes/aes_xhs_6611/aes.h
+#        magic/aes/aes_xhs_6611/aes_cbc.cpp
+#        magic/aes/aes_xhs_6611/aes_core.cpp
+#        magic/aes/aes_xhs_6611/cbc128.cpp
+#        magic/aes/aes_xhs_6611/test.cpp
+#        magic/aes/aes_xhs_6611/xhs.cpp)
 #add_executable(dlsym magic/aes/aes_xhs_6611/xhs.h)
 
 # g++ -std=gnu++0x magic/aes/aes_xhs_6611/aes_cbc.cpp magic/aes/aes_xhs_6611/aes_core.cpp magic/aes/aes_xhs_6611/cbc128.cpp magic/aes/aes_xhs_6611/xhs.cpp -fPIC -shared -o libxhs.so
