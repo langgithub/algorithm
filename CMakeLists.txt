@@ -43,8 +43,8 @@ add_executable(aes_xhs_6611
         magic/aes/aes_xhs_6611/test.cpp
         magic/aes/aes_xhs_6611/xhs.cpp
         magic/aes/aes_xhs_6611/xhs.h)
-#
-#
+
+# g++ -std=gnu++0x magic/aes/aes_xhs_6611/aes_cbc.cpp magic/aes/aes_xhs_6611/aes_core.cpp magic/aes/aes_xhs_6611/cbc128.cpp magic/aes/aes_xhs_6611/xhs.cpp -fPIC -shared -o libxhs.so
 #
 #### 执行原始的
 ## 添加可执行文件
