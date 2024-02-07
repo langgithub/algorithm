@@ -58,9 +58,10 @@ char* decrypt_hmac2(const char *AESKEY, const char *AESIV, const char* encry){
 
         AES_KEY decryptkey;
         AES_set_decrypt_key(key,128,&decryptkey);  // init key
+        print2(reinterpret_cast<char *>(decryptkey.rd_key), 128);
 
         // s_xml 文件中的 hmac 的key
-        unsigned char encrypted_text[32];
+        unsigned char encrypted_text[96];
         unsigned char *ssss;
         ssss = str2hex2(encry);
         memcpy(encrypted_text, ssss, 96);

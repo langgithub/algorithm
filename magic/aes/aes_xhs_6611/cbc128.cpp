@@ -133,8 +133,8 @@ void CRYPTO_cbc128_decrypt(const unsigned char *in, unsigned char *out,
                 for (n = 0; n < 16 / sizeof(size_t); n++)
                     out_t[n] ^= iv_t[n];
 
-//                printf("check in->\n");
-//                print((char *) in, 96);
+                printf("out or iv ->\n");
+                print((char *) out_t, 96);
 
                 iv = in;
                 len -= 16;
