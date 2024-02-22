@@ -35,6 +35,7 @@ set(CMAKE_CXX_STANDARD 14)
 #        copy/aes/aes_base_iv/cbc128.cpp
 #)
 
+# aes_xhs_6611
 add_executable(aes_xhs_6611
         magic/aes/aes_xhs_6611/aes.h
         magic/aes/aes_xhs_6611/aes_cbc.cpp
@@ -42,17 +43,9 @@ add_executable(aes_xhs_6611
         magic/aes/aes_xhs_6611/cbc128.cpp
         magic/aes/aes_xhs_6611/test.cpp
         magic/aes/aes_xhs_6611/xhs.cpp)
+# combile: g++ -std=gnu++0x magic/aes/aes_xhs_6611/aes_cbc.cpp magic/aes/aes_xhs_6611/aes_core.cpp magic/aes/aes_xhs_6611/cbc128.cpp magic/aes/aes_xhs_6611/xhs.cpp -fPIC -shared -o libxhs.so
 
-#add_library(foo SHARED magic/aes/aes_xhs_6611/aes.h
-#        magic/aes/aes_xhs_6611/aes_cbc.cpp
-#        magic/aes/aes_xhs_6611/aes_core.cpp
-#        magic/aes/aes_xhs_6611/cbc128.cpp
-#        magic/aes/aes_xhs_6611/test.cpp
-#        magic/aes/aes_xhs_6611/xhs.cpp)
-#add_executable(dlsym magic/aes/aes_xhs_6611/xhs.h)
 
-# g++ -std=gnu++0x magic/aes/aes_xhs_6611/aes_cbc.cpp magic/aes/aes_xhs_6611/aes_core.cpp magic/aes/aes_xhs_6611/cbc128.cpp magic/aes/aes_xhs_6611/xhs.cpp -fPIC -shared -o libxhs.so
-#
 #### 执行原始的
 ## 添加可执行文件
 #add_executable(openssl_test_hmac
@@ -95,3 +88,9 @@ add_executable(aes_xhs_6611
 ## 创建名为 "my_library" 的共享库
 #add_library(my_library SHARED ${LIB_SOURCES}
 #        magic/aes/aes_xhs_6611/xhs.cpp)
+
+add_executable(MurmurHash
+        copy/hash/MurmurHash/MurmurHash2.cpp
+        copy/hash/MurmurHash/MurmurHash2.h
+        copy/hash/MurmurHash/main.cpp
+)
