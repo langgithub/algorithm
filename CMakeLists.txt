@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.13)
 project(algorithm)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -36,22 +36,31 @@ set(CMAKE_CXX_STANDARD 14)
 #)
 
 # aes_xhs_6611
-add_executable(aes_xhs_6611
-        magic/aes/aes_xhs_6611/aes.h
-        magic/aes/aes_xhs_6611/aes_cbc.cpp
-        magic/aes/aes_xhs_6611/aes_core.cpp
-        magic/aes/aes_xhs_6611/cbc128.cpp
-        magic/aes/aes_xhs_6611/test.cpp
-        magic/aes/aes_xhs_6611/xhs.cpp)
+# add_executable(aes_xhs_6611
+#         magic/aes/aes_xhs_6611/aes.h
+#         magic/aes/aes_xhs_6611/aes_cbc.cpp
+#         magic/aes/aes_xhs_6611/aes_core.cpp
+#         magic/aes/aes_xhs_6611/cbc128.cpp
+#         magic/aes/aes_xhs_6611/test.cpp
+#         magic/aes/aes_xhs_6611/xhs.cpp)
 # combile: g++ -std=gnu++0x magic/aes/aes_xhs_6611/aes_cbc.cpp magic/aes/aes_xhs_6611/aes_core.cpp magic/aes/aes_xhs_6611/cbc128.cpp magic/aes/aes_xhs_6611/xhs.cpp -fPIC -shared -o libxhs.so
 
 
 #### 执行原始的
 ## 添加可执行文件
-#add_executable(openssl_test_hmac
-#        openssl/hmac/test.cpp)
-#target_include_directories(openssl_test_hmac PRIVATE /Users/yuanlang/Work/C++/install/include)
-#target_link_libraries(openssl_test_hmac PRIVATE /Users/yuanlang/Work/C++/install/lib/libcrypto.dylib)
+add_executable(openssl_test_hmac
+       openssl/hmac/test.cpp)
+target_include_directories(openssl_test_hmac PRIVATE "C:/Program Files/OpenSSL-Win64/include")
+target_link_directories(openssl_test_hmac PRIVATE "C:/Program Files/OpenSSL-Win64/lib" "C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD")
+target_link_libraries(openssl_test_hmac PRIVATE libcrypto.lib libssl.lib)
+# target_link_libraries(openssl_test_hmac PRIVATE "C:/Program Files/OpenSSL-Win64/lib/libcrypto.lib" "C:/Program Files/OpenSSL-Win64/lib/libssl.lib")
+
+
+
+# target_include_directories(openssl_test_hmac PRIVATE /Users/yuanlang/Work/C++/install/include)
+# target_link_libraries(openssl_test_hmac PRIVATE /Users/yuanlang/Work/C++/install/lib/libcrypto.dylib)
+
+
 #
 #
 ##add_executable(magic
@@ -89,8 +98,8 @@ add_executable(aes_xhs_6611
 #add_library(my_library SHARED ${LIB_SOURCES}
 #        magic/aes/aes_xhs_6611/xhs.cpp)
 
-add_executable(MurmurHash
-        copy/hash/MurmurHash/MurmurHash2.cpp
-        copy/hash/MurmurHash/MurmurHash2.h
-        copy/hash/MurmurHash/main.cpp
-)
+# add_executable(MurmurHash
+#         copy/hash/MurmurHash/MurmurHash2.cpp
+#         copy/hash/MurmurHash/MurmurHash2.h
+#         copy/hash/MurmurHash/main.cpp
+# )

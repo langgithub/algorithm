@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <cstdint>
+#include <stdint.h>
 #include "aes.h"
 
 //将文本形式的HEX串进行转换
